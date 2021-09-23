@@ -1,3 +1,5 @@
+package com.startjava.lesson_2_3.game;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
@@ -20,7 +22,6 @@ public class GuessNumber {
         playerOne.setCount(0);
         playerTwo.setCount(0);
         System.out.println("\n" + "Привет! Попробуйте угадать число, которое было загадано программой");
-        System.out.println(targetNumber);
         // Цикл для проверки числа
         while (true) {
             // Код для первого игрока
