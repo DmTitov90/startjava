@@ -36,7 +36,6 @@ public class GuessNumber {
             // Код для второго игрока
             System.out.print("\n" + playerTwo.getName() + " вводит число: ");
             playerTwo.setNumber(Integer.parseInt(reader.readLine()));
-            compareNumbers(playerTwo);
             if (compareNumbers(playerTwo)) {
                 scoreTwo++;
                 checkLuckLevel(playerTwo);
