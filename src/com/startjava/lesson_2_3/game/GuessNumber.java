@@ -1,5 +1,3 @@
-package com.startjava.lesson_2_3.game;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
@@ -19,7 +17,10 @@ public class GuessNumber {
 
     public void start() throws Exception {
         targetNumber = (int) (Math.random() * 100 + 1);
+        playerOne.setCount(0);
+        playerTwo.setCount(0);
         System.out.println("\n" + "Привет! Попробуйте угадать число, которое было загадано программой");
+        System.out.println(targetNumber);
         // Цикл для проверки числа
         while (true) {
             // Код для первого игрока
@@ -54,7 +55,8 @@ public class GuessNumber {
         if (player.getNumber() == targetNumber) {
             System.out.println("Каким то образом вы угадали число. Красавчик !");
             return true;
-        } compareText = player.getNumber() > targetNumber ? "Ты не угадал.Число больше того, которое загадал Всемогущий" :
+        }
+        compareText = player.getNumber() > targetNumber ? "Ты не угадал.Число больше того, которое загадал Всемогущий" :
                 "Ты не угадал.Число меньше того, которое загадал Всемогущий";
         return false;
     }
