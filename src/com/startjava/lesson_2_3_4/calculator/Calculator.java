@@ -6,25 +6,27 @@ class Calculator {
     private String sign;
     private double secondNumber;
 
-    public void setFirstNumber(double firstNumber) {
-        this.firstNumber = firstNumber;
+    public void setSign(String sign) {
+        this.sign = sign;
     }
 
-    public String getSign() {
-        return sign;
+    public void split(String mathString){
+        int pos = 0;
+        String[] mathSplit = mathString.split(" ");
+        for (String mathSplits: mathSplit ) {
+            mathSplit [pos++] = mathSplits;
+        }
+        firstNumber = Integer.parseInt(mathSplit[0]);
+        sign = mathSplit[1];
+        secondNumber = Integer.parseInt(mathSplit[2]);
     }
 
-    public boolean setSign(String sign) {
+    public boolean testSign(){
         if ("+".equals(sign) || "-".equals(sign) || "*".equals(sign) ||
                 "/".equals(sign) || "^".equals(sign) || "%".equals(sign)) {
-            this.sign = sign;
             return true;
         }
         return false;
-    }
-
-    public void setSecondNumber(double secondNumber) {
-        this.secondNumber = secondNumber;
     }
 
     public double calculate() {
@@ -33,14 +35,8 @@ class Calculator {
             case "-" -> firstNumber - secondNumber;
             case "*" -> firstNumber * secondNumber;
             case "/" -> firstNumber / secondNumber;
-            case "^" -> {
-                double result = 1;
-                for (int i = 1; i <= secondNumber; i++) {
-                    result *= firstNumber;
-                }
-                yield result;
-            }
-            case "%" -> firstNumber % secondNumber;
+            case "^" -> Math.pow(firstNumber, secondNumber);
+            case "%" -> Math.IEEEremainder(firstNumber, secondNumber);
             default -> 0.0;
         };
     }

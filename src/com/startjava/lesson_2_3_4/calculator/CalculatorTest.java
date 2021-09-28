@@ -10,29 +10,24 @@ public class CalculatorTest {
         Calculator calculator = new Calculator();
         String stopWord = " ";
         while (!"no".equals(stopWord)) {
-            System.out.println("Рад тебя видеть, друг! Начнем вычисления!"  + "\n");
-            System.out.print("Введи первое число: ");
-            // Присвоение 1 числа
-            calculator.setFirstNumber(Integer.parseInt(reader.readLine()));
-
-            System.out.println("\n" + """
+            System.out.println("\n" + "Рад тебя видеть, друг! Начнем вычисления!"  + "\n");
+            System.out.println("""
                     Знаки для вычисления представлены ниже:
                      "+" - для сложения,
                      "-" - для вычитания,
                      "*" - для умножения,
                      "/" - для деления,
-                     "^" - для возведения числа в степень,
+                     "^" - для возведения числа в степень (после этого знака вводите степень в которую нужно возвести),
                      "%" - для того чтобы узнать остаток от деления.\s""" + "\n");
-            System.out.print("Введите знак математической операции: ");
-            //Присвоение знака и его знака
-            while (!calculator.setSign(reader.readLine())) {
+            System.out.print("Введите математическое выражение: ");
+
+            calculator.split(reader.readLine());
+            while (!calculator.testSign()) {
+                //Присвоение знака и его знака
                 System.out.print("Введите корректный знак из представленных выше: ");
+                calculator.setSign(reader.readLine());
             }
 
-            System.out.print("\n" + "Введи второе число, если ты выбрал возведение в степень, то напиши степень, " +
-                    "в которую нужно возвести число: ");
-            // Присвоение 2 числа
-            calculator.setSecondNumber(Integer.parseInt(reader.readLine()));
             System.out.println("\n" + "Результат твоих вычислений: " + calculator.calculate() + "\n");
             do {
                 System.out.print("Хотите продолжить вычисления? [yes/no]: ");
