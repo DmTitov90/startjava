@@ -22,8 +22,7 @@ public class CalculatorTest {
             System.out.print("Введите математическое выражение: ");
 
             calculator.split(reader.readLine());
-            while (!calculator.testSign()) {
-                //Присвоение знака и его знака
+            while (!calculator.testSign()) {//Присвоение знака и его знака
                 System.out.print("Введите корректный знак из представленных выше: ");
                 calculator.setSign(reader.readLine());
             }
