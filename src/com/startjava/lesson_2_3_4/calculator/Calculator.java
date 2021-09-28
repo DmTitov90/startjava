@@ -13,7 +13,7 @@ class Calculator {
     public void split(String mathString){
         int pos = 0;
         String[] mathSplit = mathString.split(" ");
-        for (String mathSplits: mathSplit ) {
+        for (String mathSplits : mathSplit ) {
             mathSplit [pos++] = mathSplits;
         }
         firstNumber = Integer.parseInt(mathSplit[0]);
