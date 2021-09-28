@@ -6,9 +6,18 @@ class Calculator {
     private String sign;
     private double secondNumber;
 
-    public void setSign(String sign) {
-        this.sign = sign;
+    public String getSign() {
+        return sign;
     }
+
+    public boolean setSign(String sign) {
+        if ("+".equals(sign) || "-".equals(sign) || "*".equals(sign) ||
+               "/".equals(sign) || "^".equals(sign) || "%".equals(sign)) {
+           this.sign = sign;
+           return true;
+       }
+      return false;
+   }
 
     public void split(String mathString){
         int pos = 0;
@@ -19,14 +28,6 @@ class Calculator {
         firstNumber = Integer.parseInt(mathSplit[0]);
         sign = mathSplit[1];
         secondNumber = Integer.parseInt(mathSplit[2]);
-    }
-
-    public boolean testSign(){
-        if ("+".equals(sign) || "-".equals(sign) || "*".equals(sign) ||
-                "/".equals(sign) || "^".equals(sign) || "%".equals(sign)) {
-            return true;
-        }
-        return false;
     }
 
     public double calculate() {
