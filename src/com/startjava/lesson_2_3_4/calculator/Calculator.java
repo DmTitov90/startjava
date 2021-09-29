@@ -9,8 +9,13 @@ class Calculator {
     private double firstNumber;
     private String sign;
     private double secondNumber;
+    private double result;
 
-    public void calculate() throws IOException {
+    public double getResult() {
+        return result;
+    }
+
+    public double calculate() throws IOException {
         int pos = 0;
         String splitter = reader.readLine();
         String[] mathSplit = splitter.split(" ");
@@ -30,7 +35,7 @@ class Calculator {
         }
         secondNumber = Integer.parseInt(mathSplit[2]);
 
-        double result = switch (sign) {
+        result = switch (sign) {
             case "+" -> firstNumber + secondNumber;
             case "-" -> firstNumber - secondNumber;
             case "*" -> firstNumber * secondNumber;
@@ -39,6 +44,6 @@ class Calculator {
             case "%" -> Math.IEEEremainder(firstNumber, secondNumber);
             default -> 0.0;
         };
-        System.out.println("\n" + "Результат твоих вычислений: " + result + "\n");
+        return result;
     }
 }

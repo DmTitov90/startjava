@@ -28,6 +28,7 @@ public class CalculatorTest {
 
             calculator.calculate();
 
+            System.out.println("\n" + "Результат твоих вычислений: " + calculator.getResult() + "\n");
             do {
                 System.out.print("Хотите продолжить вычисления? [yes/no]: ");
                 yesOrNo = reader.readLine();
