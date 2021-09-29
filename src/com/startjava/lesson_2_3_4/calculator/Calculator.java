@@ -16,7 +16,7 @@ class Calculator {
         }
         double firstNumber = Integer.parseInt(mathSplit[0]);
         String sign = mathSplit[1];
-        while (true)
+        while (true) {
             if ("+".equals(sign) || "-".equals(sign) || "*".equals(sign) ||
                     "/".equals(sign) || "^".equals(sign) || "%".equals(sign)) {
                 break;
@@ -24,6 +24,7 @@ class Calculator {
                 System.out.print("Введите корректный знак из представленных выше: ");
                 sign = reader.readLine();
             }
+        }
         double secondNumber = Integer.parseInt(mathSplit[2]);
 
         double result = switch (sign) {
