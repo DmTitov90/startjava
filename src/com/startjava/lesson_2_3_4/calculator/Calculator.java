@@ -6,16 +6,19 @@ import java.io.InputStreamReader;
 
 class Calculator {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    private double firstNumber;
+    private String sign;
+    private double secondNumber;
 
     public void calculate() throws IOException {
         int pos = 0;
-        String spliter = reader.readLine();
-        String[] mathSplit = spliter.split(" ");
+        String splitter = reader.readLine();
+        String[] mathSplit = splitter.split(" ");
         for (String mathSplits : mathSplit) {
             mathSplit[pos++] = mathSplits;
         }
-        double firstNumber = Integer.parseInt(mathSplit[0]);
-        String sign = mathSplit[1];
+        firstNumber = Integer.parseInt(mathSplit[0]);
+        sign = mathSplit[1];
         while (true) {
             if ("+".equals(sign) || "-".equals(sign) || "*".equals(sign) ||
                     "/".equals(sign) || "^".equals(sign) || "%".equals(sign)) {
@@ -25,7 +28,7 @@ class Calculator {
                 sign = reader.readLine();
             }
         }
-        double secondNumber = Integer.parseInt(mathSplit[2]);
+        secondNumber = Integer.parseInt(mathSplit[2]);
 
         double result = switch (sign) {
             case "+" -> firstNumber + secondNumber;
