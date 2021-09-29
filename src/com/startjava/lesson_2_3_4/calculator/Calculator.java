@@ -34,6 +34,6 @@ class Calculator {
             case "%" -> Math.IEEEremainder(firstNumber, secondNumber);
             default -> 0.0;
         };
-        System.out.println("\n" + "Результат твоих вычислений `11`23`13: " + result + "\n");
+        System.out.println("\n" + "Результат твоих вычислений: " + result + "\n");
     }
 }
