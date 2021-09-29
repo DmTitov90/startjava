@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2ec4e0e6-60a6-470b-be41-4fe025e8dbb7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +35,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -41,7 +44,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.CalculatorTest">
-    <configuration name="CalculatorTest" type="Application" factoryName="Application" nameIsGenerated="true">
+    <configuration name="CalculatorTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.startjava.lesson_2_3_4.calculator.CalculatorTest" />
       <module name="startjava" />
       <extension name="coverage">
@@ -69,6 +72,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CalculatorTest" />
         <item itemvalue="Application.GuessNumberTest" />
       </list>
     </recent_temporary>
@@ -145,49 +149,7 @@
       <option name="project" value="LOCAL" />
       <updated>1632867645359</updated>
     </task>
-    <task id="LOCAL-00010" summary="Add Calculator">
-      <created>1632940804802</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1632940804802</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Add Calculator">
-      <created>1632941626291</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1632941626292</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Add Calculator">
-      <created>1632942218770</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1632942218770</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Add Calculator">
-      <created>1632942390531</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1632942390531</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Add Calculator">
-      <created>1632942469709</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1632942469710</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Add Calculator">
-      <created>1632942996574</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1632942996574</updated>
-    </task>
-    <option name="localTasksCounter" value="16" />
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
