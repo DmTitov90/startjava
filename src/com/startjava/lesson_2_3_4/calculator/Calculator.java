@@ -19,7 +19,6 @@ class Calculator {
         while (true)
             if ("+".equals(sign) || "-".equals(sign) || "*".equals(sign) ||
                     "/".equals(sign) || "^".equals(sign) || "%".equals(sign)) {
-                sign = sign;
                 break;
             } else {
                 System.out.print("Введите корректный знак из представленных выше: ");
