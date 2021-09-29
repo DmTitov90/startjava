@@ -16,13 +16,15 @@ class Calculator {
         }
         double firstNumber = Integer.parseInt(mathSplit[0]);
         String sign = mathSplit[1];
-        if ("+".equals(sign) || "-".equals(sign) || "*".equals(sign) ||
-                "/".equals(sign) || "^".equals(sign) || "%".equals(sign)) {
-            sign = sign;
-        } else {
-            System.out.print("Введите корректный знак из представленных выше: ");
-            sign = reader.readLine();
-        }
+        while (true)
+            if ("+".equals(sign) || "-".equals(sign) || "*".equals(sign) ||
+                    "/".equals(sign) || "^".equals(sign) || "%".equals(sign)) {
+                sign = sign;
+                break;
+            } else {
+                System.out.print("Введите корректный знак из представленных выше: ");
+                sign = reader.readLine();
+            }
         double secondNumber = Integer.parseInt(mathSplit[2]);
 
         double result = switch (sign) {

@@ -27,6 +27,7 @@ public class CalculatorTest {
             System.out.print("Введите математическое выражение: ");
 
             calculator.calculate();
+
             do {
                 System.out.print("Хотите продолжить вычисления? [yes/no]: ");
                 yesOrNo = reader.readLine();
