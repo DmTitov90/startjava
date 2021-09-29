@@ -9,7 +9,12 @@ class Calculator {
     private double firstNumber;
     private String sign;
     private double secondNumber;
+    private String splitter;
     private double result;
+
+    public Calculator(String splitter) {
+        this.splitter = splitter;
+    }
 
     public double getResult() {
         return result;
@@ -17,7 +22,6 @@ class Calculator {
 
     public double calculate() throws IOException {
         int pos = 0;
-        String splitter = reader.readLine();
         String[] mathSplit = splitter.split(" ");
         for (String mathSplits : mathSplit) {
             mathSplit[pos++] = mathSplits;

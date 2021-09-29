@@ -11,7 +11,6 @@ import java.io.InputStreamReader;
 public class CalculatorTest {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        Calculator calculator = new Calculator();
         String yesOrNo = " ";
 
         while (!"no".equals(yesOrNo)) {
@@ -25,6 +24,7 @@ public class CalculatorTest {
                      "^" - для возведения числа в степень (после знака введите нужную вам степень числа),
                      "%" - для того чтобы узнать остаток от деления.\s""" + "\n");
             System.out.print("Введите математическое выражение: ");
+            Calculator calculator = new Calculator(reader.readLine());
 
             calculator.calculate();
 
