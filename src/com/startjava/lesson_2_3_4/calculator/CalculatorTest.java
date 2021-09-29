@@ -26,13 +26,6 @@ public class CalculatorTest {
                      "%" - для того чтобы узнать остаток от деления.\s""" + "\n");
             System.out.print("Введите математическое выражение: ");
 
-//            calculator.split(reader.readLine());
-//            while (!calculator.setSign(calculator.getSign())) {//Присвоение знака и его знака
-//                System.out.print("Введите корректный знак из представленных выше: ");
-//                calculator.setSign(reader.readLine());
-//            }
-//
-//            System.out.println("\n" + "Результат твоих вычислений: " + calculator.calculate() + "\n");
             calculator.calculate();
             do {
                 System.out.print("Хотите продолжить вычисления? [yes/no]: ");
