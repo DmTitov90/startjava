@@ -30,8 +30,7 @@ class Calculator {
         secondNumber = Integer.parseInt(splitMathExpression[2]);
     }
 
-    public double calculate() throws IOException {
-
+    public double calculate() {
         return switch (sign) {
             case "+" -> firstNumber + secondNumber;
             case "-" -> firstNumber - secondNumber;
