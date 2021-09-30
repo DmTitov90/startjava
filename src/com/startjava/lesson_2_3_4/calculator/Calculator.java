@@ -11,11 +11,7 @@ class Calculator {
     private double secondNumber;
 
     public Calculator(String mathExpression) throws IOException {
-        int pos = 0;
         String[] splitMathExpression = mathExpression.split(" ");
-        for (String mathSplits : splitMathExpression) {
-            splitMathExpression[pos++] = mathSplits;
-        }
         firstNumber = Integer.parseInt(splitMathExpression[0]);
         sign = splitMathExpression[1];
         while (true) {

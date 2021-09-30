@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 /**
  * Creator Dmitrii Titov
- * Date 30.09.2021 Version 1.0.2
+ * Date 30.09.2021 Version 1.0.3
  */
 public class CalculatorTest {
     public static void main(String[] args) throws IOException {
