@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 /**
  * Creator Dmitrii Titov
- * Date 29.09.2021 Version 1.0.1
+ * Date 30.09.2021 Version 1.0.2
  */
 public class CalculatorTest {
     public static void main(String[] args) throws IOException {
@@ -26,9 +26,7 @@ public class CalculatorTest {
             System.out.print("Введите математическое выражение: ");
             Calculator calculator = new Calculator(reader.readLine());
 
-            calculator.calculate();
-
-            System.out.println("\n" + "Результат твоих вычислений: " + calculator.getResult() + "\n");
+            System.out.println("\n" + "Результат твоих вычислений: " + calculator.calculate() + "\n");
             do {
                 System.out.print("Хотите продолжить вычисления? [yes/no]: ");
                 yesOrNo = reader.readLine();
