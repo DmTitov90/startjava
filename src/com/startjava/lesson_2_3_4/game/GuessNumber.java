@@ -100,11 +100,13 @@ public class GuessNumber {
             System.out.println("Угадывать это не твое. Ты угадали числа за: " + player.getCount() + " попыток.");
         }
     }
-    public void deleteNumbers(){
+
+    public void deleteNumbers() {
         Arrays.fill(playerOne.clearNumbers(), 0, playerOne.getCount(), 0);
         Arrays.fill(playerTwo.clearNumbers(), 0, playerOne.getCount(), 0);
     }
-    public void cleaner(Player player){
+
+    public void cleaner(Player player) {
         player.setIndex(0);
         player.setCount(0);
     }

@@ -42,7 +42,7 @@ public class Player {
         this.index = index;
     }
 
-    public int[] clearNumbers(){
+    public int[] clearNumbers() {
         return arrayNumber;
     }
 }
