@@ -18,7 +18,7 @@ public class GuessNumber {
         this.playerTwo = playerTwo;
     }
 
-    public void start() throws Exception {
+    public void start() throws Exception, ArrayIndexOutOfBoundsException {
         targetNumber = (int) (Math.random() * 100 + 1);
         playerOne.setCount(0);
         playerTwo.setCount(0);
@@ -59,6 +59,7 @@ public class GuessNumber {
             }
 
             if (playerTwo.getCount() == 10) {
+
                 arrayCopy();
             }
         }
