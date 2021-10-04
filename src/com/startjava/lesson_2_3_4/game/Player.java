@@ -3,7 +3,9 @@ package com.startjava.lesson_2_3_4.game;
 public class Player {
     private String name;
     private int number;
+    private int[] arrayNumber = new int[10];
     private int count;
+    private int index;
 
     public Player(String name) {
         this.name = name;
@@ -17,8 +19,22 @@ public class Player {
         return number;
     }
 
+    public int[] getArrayNumber() {
+        return arrayNumber;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
+    }
+
     public void setNumber(int number) {
         this.number = number;
+        this.arrayNumber[index] = number;
+        index++;
         count++;
     }
 
@@ -29,4 +45,5 @@ public class Player {
     public void setCount(int count) {
         this.count = count;
     }
+
 }

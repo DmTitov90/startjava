@@ -2,6 +2,7 @@ package com.startjava.lesson_2_3_4.game;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 public class GuessNumber {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -23,13 +24,19 @@ public class GuessNumber {
         playerTwo.setCount(0);
         System.out.println("\n" + "Привет! Попробуйте угадать число, которое было загадано программой");
         // Цикл для проверки числа
-        while (true) {
+        int stop = 0;
+        while (stop < 10) {
+            stop++;
             // Код для первого игрока
             System.out.print("\n" + playerOne.getName() + " вводит число: ");
             playerOne.setNumber(Integer.parseInt(reader.readLine()));
-            if (compareNumbers(playerOne)) {
+            if (playerOne.getCount() == 10) {
+                System.out.println("У " + playerOne.getName() + " Закончились попытки");
+                break;
+            } else if (compareNumbers(playerOne)) {
                 scoreOne++;
                 checkLuckLevel(playerOne);
+                arrayCopy();
                 System.out.println(playerOne.getName() + " " + "Победитель !!!");
                 break;
             } else {
@@ -38,18 +45,33 @@ public class GuessNumber {
             // Код для второго игрока
             System.out.print("\n" + playerTwo.getName() + " вводит число: ");
             playerTwo.setNumber(Integer.parseInt(reader.readLine()));
-            if (compareNumbers(playerTwo)) {
+            if (playerTwo.getCount() == 10) {
+                System.out.println("У " + playerTwo.getName() + " Закончились попытки");
+                break;
+            } else if (compareNumbers(playerTwo)) {
                 scoreTwo++;
                 checkLuckLevel(playerTwo);
+                arrayCopy();
                 System.out.println(playerTwo.getName() + " " + "Победитель !!!");
                 break;
             } else {
                 System.out.println(compareText);
             }
+
+            if (playerTwo.getCount() == 10) {
+                arrayCopy();
+            }
         }
         // Объявление счета в игре
         System.out.println("\n" + "Счет в игре: " + playerOne.getName() + " " + scoreOne + " - "
                 + playerTwo.getName() + " " + scoreTwo + "\n");
+    }
+    //Копирует и выводит скопированный Массив на экран через пробел
+    public void arrayCopy() {
+        int[] arrayPlayerOneCopy = Arrays.copyOf(playerOne.getArrayNumber(), playerOne.getCount());
+        int[] arrayPlayerTwoCopy = Arrays.copyOf(playerTwo.getArrayNumber(), playerTwo.getCount());
+        System.out.println("Числа Первого игрока: " + Arrays.toString(arrayPlayerOneCopy));
+        System.out.println("Числа Второго игрока: " + Arrays.toString(arrayPlayerTwoCopy));
     }
 
     public boolean compareNumbers(Player player) {
@@ -72,7 +94,7 @@ public class GuessNumber {
         } else if (player.getCount() <= 9) {
             System.out.println("Нужно тренироваться. Ты угадали числа за: " + player.getCount() + " попыток, не плохо");
         } else {
-            System.out.println( "Угадывать это не твое. Ты угадали числа за: " + player.getCount() + " попыток.");
+            System.out.println("Угадывать это не твое. Ты угадали числа за: " + player.getCount() + " попыток.");
         }
     }
 }
