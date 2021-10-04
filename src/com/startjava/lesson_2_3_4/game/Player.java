@@ -23,14 +23,6 @@ public class Player {
         return arrayNumber;
     }
 
-    public int getIndex() {
-        return index;
-    }
-
-    public void setIndex(int index) {
-        this.index = index;
-    }
-
     public void setNumber(int number) {
         this.number = number;
         this.arrayNumber[index] = number;

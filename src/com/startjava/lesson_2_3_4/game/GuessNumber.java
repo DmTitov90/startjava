@@ -66,6 +66,7 @@ public class GuessNumber {
         System.out.println("\n" + "Счет в игре: " + playerOne.getName() + " " + scoreOne + " - "
                 + playerTwo.getName() + " " + scoreTwo + "\n");
     }
+
     //Копирует и выводит скопированный Массив на экран через пробел
     public void arrayCopy() {
         int[] arrayPlayerOneCopy = Arrays.copyOf(playerOne.getArrayNumber(), playerOne.getCount());
