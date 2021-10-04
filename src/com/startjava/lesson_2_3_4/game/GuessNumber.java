@@ -20,8 +20,8 @@ public class GuessNumber {
 
     public void start() throws Exception, ArrayIndexOutOfBoundsException {
         targetNumber = (int) (Math.random() * 100 + 1);
-        playerOne.setCount(0);
-        playerTwo.setCount(0);
+        cleaner(playerOne);
+        cleaner(playerTwo);
         System.out.println("\n" + "Привет! Попробуйте угадать число, которое было загадано программой");
         // Цикл для проверки числа
         int stop = 0;
@@ -66,6 +66,7 @@ public class GuessNumber {
         // Объявление счета в игре
         System.out.println("\n" + "Счет в игре: " + playerOne.getName() + " " + scoreOne + " - "
                 + playerTwo.getName() + " " + scoreTwo + "\n");
+        deleteNumbers();
     }
 
     //Копирует и выводит скопированный Массив на экран через пробел
@@ -98,5 +99,13 @@ public class GuessNumber {
         } else {
             System.out.println("Угадывать это не твое. Ты угадали числа за: " + player.getCount() + " попыток.");
         }
+    }
+    public void deleteNumbers(){
+        Arrays.fill(playerOne.clearNumbers(), 0, playerOne.getCount(), 0);
+        Arrays.fill(playerTwo.clearNumbers(), 0, playerOne.getCount(), 0);
+    }
+    public void cleaner(Player player){
+        player.setIndex(0);
+        player.setCount(0);
     }
 }

@@ -38,4 +38,11 @@ public class Player {
         this.count = count;
     }
 
+    public void setIndex(int index) {
+        this.index = index;
+    }
+
+    public int[] clearNumbers(){
+        return arrayNumber;
+    }
 }
