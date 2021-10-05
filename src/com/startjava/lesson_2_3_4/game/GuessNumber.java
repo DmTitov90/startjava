@@ -40,7 +40,7 @@ public class GuessNumber {
             } else if (compareNumbers(playerOne)) {
                 scoreOne++;
                 checkLuckLevel(playerOne);
-                arrayCopy();
+                outputArray();
                 System.out.println(playerOne.getName() + " " + "Победитель !!!");
                 break;
             } else {
@@ -55,7 +55,7 @@ public class GuessNumber {
             } else if (compareNumbers(playerTwo)) {
                 scoreTwo++;
                 checkLuckLevel(playerTwo);
-                arrayCopy();
+                outputArray();
                 System.out.println(playerTwo.getName() + " " + "Победитель !!!");
                 break;
             } else {
@@ -64,7 +64,7 @@ public class GuessNumber {
 
             if (playerTwo.getCount() == 10) {
 
-                arrayCopy();
+                outputArray();
             }
         }
         // Объявление счета в игре
@@ -108,7 +108,7 @@ public class GuessNumber {
     }
 
     //Копирует и выводит скопированный Массив на экран через пробел
-    public void arrayCopy() {
+    public void outputArray() {
         int[] arrayPlayerOneCopy = Arrays.copyOf(playerOne.getEnteredNumbers(), playerOne.getCount());
         int[] arrayPlayerTwoCopy = Arrays.copyOf(playerTwo.getEnteredNumbers(), playerTwo.getCount());
         System.out.println("Числа Первого игрока: " + Arrays.toString(arrayPlayerOneCopy));
