@@ -6,16 +6,14 @@ import java.util.Arrays;
 
 /**
  * Creator Dmitrii Titov
- * Date 5.10.2021 Version 1.0.0
+ * Date 6.10.2021 Version 1.0.2
  */
 public class GuessNumberTest {
     public static void main(String[] args) throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("У каждого игрока по 10 попыток!" + "\n");
-        System.out.print("Введите Имя первого игрока: " + "\n");
-        Player playerOne = new Player(reader.readLine());
-        System.out.print("Введите Имя второго игрока: " + "\n");
-        Player playerTwo = new Player(reader.readLine());
+        Player playerOne = new Player();
+        Player playerTwo = new Player();
         GuessNumber game = new GuessNumber(playerOne, playerTwo);
         String answer = " ";
 

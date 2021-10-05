@@ -1,6 +1,7 @@
 package com.startjava.lesson_2_3_4.game;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
@@ -18,15 +19,18 @@ public class GuessNumber {
         this.playerTwo = playerTwo;
     }
 
-    public void start() throws Exception, ArrayIndexOutOfBoundsException {
+    public void start() throws Exception {
+        createPlayers(playerOne);
+        createPlayers(playerTwo);
         targetNumber = (int) (Math.random() * 100 + 1);
-        cleaner(playerOne);
-        cleaner(playerTwo);
+        System.out.println(targetNumber);
+        setUpCount(playerOne);
+        setUpCount(playerTwo);
         System.out.println("\n" + "Привет! Попробуйте угадать число, которое было загадано программой");
         // Цикл для проверки числа
-        int stop = 0;
-        while (stop < 10) {
-            stop++;
+        int endCicle = 0;
+        while (endCicle < 10) {
+            endCicle++;
             // Код для первого игрока
             System.out.print("\n" + playerOne.getName() + " вводит число: ");
             playerOne.setNumber(Integer.parseInt(reader.readLine()));
@@ -64,20 +68,22 @@ public class GuessNumber {
             }
         }
         // Объявление счета в игре
+
         System.out.println("\n" + "Счет в игре: " + playerOne.getName() + " " + scoreOne + " - "
                 + playerTwo.getName() + " " + scoreTwo + "\n");
         deleteNumbers();
     }
+    public void createPlayers(Player player) throws IOException {
+        System.out.print("Введите Имя игрока: " + "\n");
+        player.setName(reader.readLine());
+    }
 
-    //Копирует и выводит скопированный Массив на экран через пробел
-    public void arrayCopy() {
-        int[] arrayPlayerOneCopy = Arrays.copyOf(playerOne.getArrayNumber(), playerOne.getCount());
-        int[] arrayPlayerTwoCopy = Arrays.copyOf(playerTwo.getArrayNumber(), playerTwo.getCount());
-        System.out.println("Числа Первого игрока: " + Arrays.toString(arrayPlayerOneCopy));
-        System.out.println("Числа Второго игрока: " + Arrays.toString(arrayPlayerTwoCopy));
+    public void setUpCount(Player player) {
+        player.setCount(0);
     }
 
     public boolean compareNumbers(Player player) {
+
         if (player.getNumber() == targetNumber) {
             System.out.println("Каким то образом вы угадали число. Красавчик !");
             return true;
@@ -101,13 +107,16 @@ public class GuessNumber {
         }
     }
 
-    public void deleteNumbers() {
-        Arrays.fill(playerOne.clearNumbers(), 0, playerOne.getCount(), 0);
-        Arrays.fill(playerTwo.clearNumbers(), 0, playerOne.getCount(), 0);
+    //Копирует и выводит скопированный Массив на экран через пробел
+    public void arrayCopy() {
+        int[] arrayPlayerOneCopy = Arrays.copyOf(playerOne.getEnteredNumbers(), playerOne.getCount());
+        int[] arrayPlayerTwoCopy = Arrays.copyOf(playerTwo.getEnteredNumbers(), playerTwo.getCount());
+        System.out.println("Числа Первого игрока: " + Arrays.toString(arrayPlayerOneCopy));
+        System.out.println("Числа Второго игрока: " + Arrays.toString(arrayPlayerTwoCopy));
     }
 
-    public void cleaner(Player player) {
-        player.setIndex(0);
-        player.setCount(0);
+    public void deleteNumbers() {
+        Arrays.fill(playerOne.fillingNumbers(), 0, playerOne.getCount(), 0);
+        Arrays.fill(playerTwo.fillingNumbers(), 0, playerOne.getCount(), 0);
     }
 }

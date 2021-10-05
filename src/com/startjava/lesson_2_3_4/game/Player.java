@@ -1,32 +1,33 @@
 package com.startjava.lesson_2_3_4.game;
 
+import java.util.Arrays;
+
 public class Player {
     private String name;
     private int number;
-    private int[] arrayNumber = new int[10];
+    private int[] enteredNumbers = new int[10];
     private int count;
-    private int index;
-
-    public Player(String name) {
-        this.name = name;
-    }
 
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getNumber() {
         return number;
     }
 
-    public int[] getArrayNumber() {
-        return arrayNumber;
+    public int[] getEnteredNumbers() {
+        int[] copyEnteredNumbers = Arrays.copyOf(enteredNumbers, enteredNumbers.length);
+        return copyEnteredNumbers;
     }
 
     public void setNumber(int number) {
         this.number = number;
-        this.arrayNumber[index] = number;
-        index++;
+        this.enteredNumbers[count] = number;
         count++;
     }
 
@@ -38,11 +39,7 @@ public class Player {
         this.count = count;
     }
 
-    public void setIndex(int index) {
-        this.index = index;
-    }
-
-    public int[] clearNumbers() {
-        return arrayNumber;
+    public int[] fillingNumbers(){
+        return enteredNumbers;
     }
 }
