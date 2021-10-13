@@ -49,15 +49,6 @@ public class GuessNumber {
         deleteNumbers(playerTwo);
     }
 
-    private void outputArray(Player player) {
-        int[] arrayPlayerOneCopy = Arrays.copyOf(player.getEnteredNumbers(), player.getCount());
-        System.out.print("Числа игрока " + player.getName() + ": ");
-        for (int asd : arrayPlayerOneCopy) {
-            System.out.print(asd + " ");
-        }
-        System.out.println();
-    }
-
     private boolean inputAndCheckPlayer(Player player) throws IOException {
         System.out.print("\n" + player.getName() + " вводит число: ");
         player.setNumber(Integer.parseInt(reader.readLine()));
@@ -78,6 +69,15 @@ public class GuessNumber {
     private void printAttemptNumbers() {
         outputArray(playerOne);
         outputArray(playerTwo);
+    }
+
+    private void outputArray(Player player) {
+        int[] arrayPlayerOneCopy = Arrays.copyOf(player.getEnteredNumbers(), player.getCount());
+        System.out.print("Числа игрока " + player.getName() + ": ");
+        for (int asd : arrayPlayerOneCopy) {
+            System.out.print(asd + " ");
+        }
+        System.out.println();
     }
 
     private void setUpCount(Player player) {
