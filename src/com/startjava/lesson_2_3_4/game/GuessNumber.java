@@ -35,9 +35,9 @@ public class GuessNumber {
                 printAttemptNumbers();
                 break;
             }
-            if (playerTwo.getCount() == 10) {
-                printAttemptNumbers();
-            }
+        }
+        if (playerTwo.getCount() == 10) {
+            printAttemptNumbers();
         }
 
         // Объявление счета в игре
