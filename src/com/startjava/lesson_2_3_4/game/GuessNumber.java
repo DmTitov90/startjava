@@ -90,7 +90,8 @@ public class GuessNumber {
             System.out.println("Каким то образом вы угадали число. Красавчик !");
             return true;
         }
-        compareText = player.getEnteredNumbers()[player.getCount() - 1] > targetNumber ? "Ты не угадал.Число больше того, которое загадал Всемогущий" :
+        compareText = player.getEnteredNumbers()[player.getCount() - 1] > targetNumber ?
+                "Ты не угадал.Число больше того, которое загадал Всемогущий" :
                 "Ты не угадал.Число меньше того, которое загадал Всемогущий";
         return false;
     }
