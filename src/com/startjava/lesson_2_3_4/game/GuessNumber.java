@@ -18,7 +18,7 @@ public class GuessNumber {
         this.playerTwo = playerTwo;
     }
 
-    public void start() throws Exception {
+    public void start() throws IOException {
         targetNumber = (int) (Math.random() * 100 + 1);
         setUpCount(playerOne);
         setUpCount(playerTwo);
