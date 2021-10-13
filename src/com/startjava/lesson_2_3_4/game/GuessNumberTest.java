@@ -1,6 +1,7 @@
 package com.startjava.lesson_2_3_4.game;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
@@ -8,7 +9,7 @@ import java.io.InputStreamReader;
  * Date 13.10.2021 Version 1.0.3
  */
 public class GuessNumberTest {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("У каждого игрока по 10 попыток!" + "\n");
         System.out.print("Введите имя первого игрока: " + "\n");
