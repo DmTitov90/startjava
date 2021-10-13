@@ -20,8 +20,7 @@ public class GuessNumber {
     }
 
     public void start() throws Exception {
-        createPlayers(playerOne);
-        createPlayers(playerTwo);
+
         targetNumber = (int) (Math.random() * 100 + 1);
         System.out.println(targetNumber);
         setUpCount(playerOne);
@@ -73,28 +72,24 @@ public class GuessNumber {
                 + playerTwo.getName() + " " + scoreTwo + "\n");
         deleteNumbers();
     }
-    public void createPlayers(Player player) throws IOException {
-        System.out.print("Введите Имя игрока: " + "\n");
-        player.setName(reader.readLine());
-    }
 
-    public void setUpCount(Player player) {
+    private void setUpCount(Player player) {
         player.setCount(0);
     }
 
-    public boolean compareNumbers(Player player) {
+    private boolean compareNumbers(Player player) {
 
-        if (player.getNumber() == targetNumber) {
+        if (player.getEnteredNumbers()[player.getCount() - 1] == targetNumber) {
             System.out.println("Каким то образом вы угадали число. Красавчик !");
             return true;
         }
-        compareText = player.getNumber() > targetNumber ? "Ты не угадал.Число больше того, которое загадал Всемогущий" :
+        compareText = player.getEnteredNumbers()[player.getCount() - 1] > targetNumber ? "Ты не угадал.Число больше того, которое загадал Всемогущий" :
                 "Ты не угадал.Число меньше того, которое загадал Всемогущий";
         return false;
     }
 
     //Проверка кол-ва попыток
-    public void checkLuckLevel(Player player) {
+    private void checkLuckLevel(Player player) {
         if (player.getCount() <= 3) {
             System.out.println("Срочно иди в казино или на ТВ программу " +
                     "\"Кто хочет стать экстрасенсом?\"!!!Колличество попыток: " + player.getCount() + "  Отлично.");
@@ -108,14 +103,14 @@ public class GuessNumber {
     }
 
     //Копирует и выводит скопированный Массив на экран через пробел
-    public void outputArray() {
+    private void outputArray() {
         int[] arrayPlayerOneCopy = Arrays.copyOf(playerOne.getEnteredNumbers(), playerOne.getCount());
         int[] arrayPlayerTwoCopy = Arrays.copyOf(playerTwo.getEnteredNumbers(), playerTwo.getCount());
         System.out.println("Числа Первого игрока: " + Arrays.toString(arrayPlayerOneCopy));
         System.out.println("Числа Второго игрока: " + Arrays.toString(arrayPlayerTwoCopy));
     }
 
-    public void deleteNumbers() {
+    private void deleteNumbers() {
         Arrays.fill(playerOne.fillingNumbers(), 0, playerOne.getCount(), 0);
         Arrays.fill(playerTwo.fillingNumbers(), 0, playerOne.getCount(), 0);
     }

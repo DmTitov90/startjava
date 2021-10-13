@@ -4,29 +4,22 @@ import java.util.Arrays;
 
 public class Player {
     private String name;
-    private int number;
     private int[] enteredNumbers = new int[10];
     private int count;
+
+    public Player(String name) {
+        this.name = name;
+    }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getNumber() {
-        return number;
-    }
-
     public int[] getEnteredNumbers() {
-        int[] copyEnteredNumbers = Arrays.copyOf(enteredNumbers, enteredNumbers.length);
-        return copyEnteredNumbers;
+        return Arrays.copyOf(enteredNumbers, enteredNumbers.length);
     }
 
     public void setNumber(int number) {
-        this.number = number;
         this.enteredNumbers[count] = number;
         count++;
     }
