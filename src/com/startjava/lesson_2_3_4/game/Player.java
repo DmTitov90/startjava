@@ -6,6 +6,7 @@ public class Player {
     private String name;
     private int[] enteredNumbers = new int[10];
     private int count;
+    private int score;
 
     public Player(String name) {
         this.name = name;
@@ -16,7 +17,7 @@ public class Player {
     }
 
     public int[] getEnteredNumbers() {
-        return Arrays.copyOf(enteredNumbers, enteredNumbers.length);
+        return Arrays.copyOf(enteredNumbers, count);
     }
 
     public void setNumber(int number) {
@@ -32,7 +33,11 @@ public class Player {
         this.count = count;
     }
 
-    public int[] fillingNumbers(){
-        return enteredNumbers;
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
     }
 }

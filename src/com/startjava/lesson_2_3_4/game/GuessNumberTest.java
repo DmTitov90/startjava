@@ -21,13 +21,10 @@ public class GuessNumberTest {
         game.start();
 
         while (!"no".equals(answer)) {
-//            do {
-//                System.out.print("\n" + "Хотите продолжить игру? [yes/no]:");
-//                answer = reader.readLine();
-//            } while (!"no".equals(answer) && !"yes".equals(answer));
+
             System.out.print("\n" + "Хотите продолжить игру? [yes/no]:");
             answer = reader.readLine();
-            if ("yes".equals(answer)){
+            if ("yes".equals(answer)) {
                 game.start();
             }
         }
