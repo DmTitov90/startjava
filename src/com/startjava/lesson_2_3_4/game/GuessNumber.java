@@ -12,19 +12,18 @@ public class GuessNumber {
     private Player playerTwo;
     private String compareText;
 
+    //Перенос игроков в игру
     public GuessNumber(Player playerOne, Player playerTwo) {
         this.playerOne = playerOne;
         this.playerTwo = playerTwo;
     }
 
     public void start() throws Exception {
-
         targetNumber = (int) (Math.random() * 100 + 1);
-        System.out.println(targetNumber);
         setUpCount(playerOne);
         setUpCount(playerTwo);
         System.out.println("\n" + "Привет! Попробуйте угадать число, которое было загадано программой");
-        // Цикл для проверки числа
+        // Цикл игры, в котором игроки вводят числа и идет их проверка
         int endCicle = 0;
         while (endCicle < 10) {
             endCicle++;
@@ -40,8 +39,8 @@ public class GuessNumber {
                 printAttemptNumbers();
             }
         }
-        // Объявление счета в игре
 
+        // Объявление счета в игре
         System.out.println("\n" + "Счет в игре: " + playerOne.getName() + " " + playerOne.getScore() + " - "
                 + playerTwo.getName() + " " + playerTwo.getScore() + "\n");
 
@@ -49,6 +48,7 @@ public class GuessNumber {
         deleteNumbers(playerTwo);
     }
 
+    // Ввод игроком чисел, их проверка, счетчик счета и попыток для отдельного игрока
     private boolean inputAndCheckPlayer(Player player) throws IOException {
         System.out.print("\n" + player.getName() + " вводит число: ");
         player.setNumber(Integer.parseInt(reader.readLine()));
@@ -66,26 +66,29 @@ public class GuessNumber {
         }
     }
 
+    //Вывод не верных попыток через пробел для обоих игроков
     private void printAttemptNumbers() {
         outputArray(playerOne);
         outputArray(playerTwo);
     }
 
+    //Создание копии массива с неверными введенными числами и вывод его через пробел
     private void outputArray(Player player) {
         int[] arrayPlayerOneCopy = Arrays.copyOf(player.getEnteredNumbers(), player.getCount());
         System.out.print("Числа игрока " + player.getName() + ": ");
-        for (int asd : arrayPlayerOneCopy) {
-            System.out.print(asd + " ");
+        for (int wrongNumbers : arrayPlayerOneCopy) {
+            System.out.print(wrongNumbers + " ");
         }
         System.out.println();
     }
 
+    //Обнуление счетчика попыток
     private void setUpCount(Player player) {
         player.setCount(0);
     }
 
+    //Сравнение числа с загаданным игрой
     private boolean compareNumbers(Player player) {
-
         if (player.getEnteredNumbers()[player.getCount() - 1] == targetNumber) {
             System.out.println("Каким то образом вы угадали число. Красавчик !");
             return true;
@@ -110,6 +113,7 @@ public class GuessNumber {
         }
     }
 
+    // Замена введенных чисел игроками на нули
     private void deleteNumbers(Player player) {
         Arrays.fill(player.getEnteredNumbers(), 0, player.getCount(), 0);
     }
