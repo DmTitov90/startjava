@@ -17,16 +17,14 @@ public class GuessNumberTest {
         System.out.print("Введите имя второго игрока: " + "\n");
         Player playerTwo = new Player(reader.readLine());
         GuessNumber game = new GuessNumber(playerOne, playerTwo);
-        String answer = " ";
-
-        game.start();
+        String answer = "yes";
 
         while (!"no".equals(answer)) {
-            System.out.print("\n" + "Хотите продолжить игру? [yes/no]:");
-            answer = reader.readLine();
             if ("yes".equals(answer)) {
                 game.start();
             }
+            System.out.print("\n" + "Хотите продолжить игру? [yes/no]:");
+            answer = reader.readLine();
         }
     }
 }
