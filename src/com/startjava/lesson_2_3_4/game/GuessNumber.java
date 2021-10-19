@@ -44,8 +44,6 @@ public class GuessNumber {
         System.out.println("\n" + "Счет в игре: " + playerOne.getName() + " " + playerOne.getScore() + " - "
                 + playerTwo.getName() + " " + playerTwo.getScore() + "\n");
 
-//        deleteNumbers(playerOne);
-//        deleteNumbers(playerTwo);
         playerOne.deleteNumbers();
         playerTwo.deleteNumbers();
     }
@@ -76,11 +74,11 @@ public class GuessNumber {
         if (player.getLastNumber() == targetNumber) {
             System.out.println("Каким то образом вы угадали число. Красавчик !");
             return true;
-        } else {
-            compareText = player.getLastNumber() > targetNumber ? "больше" : "меньше";
-            System.out.println("Ты не угадал.Число " + compareText + " того, которое загадал Всемогущий");
-            return false;
         }
+        compareText = player.getLastNumber() > targetNumber ? "больше" : "меньше";
+        System.out.println("Ты не угадал.Число " + compareText + " того, которое загадал Всемогущий");
+        return false;
+
     }
 
     //Проверка кол-ва попыток
