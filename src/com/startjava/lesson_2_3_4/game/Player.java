@@ -42,7 +42,7 @@ public class Player {
     }
 
     public void deleteNumbers() {
-        Arrays.fill(getEnteredNumbers(), 0, getCount(), 0);
+        Arrays.fill(enteredNumbers, 0, getCount(), 0);
     }
 
     public int getLastNumber() {
