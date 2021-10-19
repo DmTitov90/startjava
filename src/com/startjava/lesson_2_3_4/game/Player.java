@@ -46,6 +46,6 @@ public class Player {
     }
 
     public int getLastNumber() {
-       return getEnteredNumbers()[count - 1];
+        return getEnteredNumbers()[count - 1];
     }
 }

@@ -67,10 +67,8 @@ public class GuessNumber {
             checkLuckLevel(player);
             System.out.println(player.getName() + " " + "Победитель !!!");
             return false;
-        } else {
-            System.out.println(compareText);
-            return true;
         }
+        return true;
     }
 
     //Сравнение числа с загаданным игрой
@@ -78,25 +76,32 @@ public class GuessNumber {
         if (player.getLastNumber() == targetNumber) {
             System.out.println("Каким то образом вы угадали число. Красавчик !");
             return true;
+        } else {
+            compareText = player.getLastNumber() > targetNumber ? "больше" : "меньше";
+            System.out.println("Ты не угадал.Число " + compareText + " того, которое загадал Всемогущий");
+            return false;
         }
-        compareText = player.getLastNumber() > targetNumber ?
-                "Ты не угадал.Число больше того, которое загадал Всемогущий" :
-                "Ты не угадал.Число меньше того, которое загадал Всемогущий";
-        return false;
     }
 
     //Проверка кол-ва попыток
     private void checkLuckLevel(Player player) {
-        if (player.getCount() <= 3) {
-            System.out.println("Срочно иди в казино или на ТВ программу " +
-                    "\"Кто хочет стать экстрасенсом?\"!!!Колличество попыток: " + player.getCount() + "  Отлично.");
-        } else if (player.getCount() <= 6) {
-            System.out.println("А ты хорош! Колличество попыток: " + player.getCount());
-        } else if (player.getCount() <= 9) {
-            System.out.println("Нужно тренироваться. Ты угадали числа за: " + player.getCount() + " попыток, не плохо");
-        } else {
-            System.out.println("Угадывать это не твое. Ты угадали числа за: " + player.getCount() + " попыток.");
+        String underThreeAttempts = "Срочно иди в казино или на ТВ программу " +
+                "\"Кто хочет стать экстрасенсом?\"!!!Колличество попыток: " + player.getCount() + "  Отлично.";
+        String underSixAttempts = "А ты хорош! Колличество попыток: " + player.getCount();
+        String underNineAttempts = "Нужно тренироваться. Ты угадали числа за: " + player.getCount() + " попыток, не плохо";
+        switch (player.getCount()) {
+            case (1) -> System.out.println(underThreeAttempts);
+            case (2) -> System.out.println(underThreeAttempts);
+            case (3) -> System.out.println(underThreeAttempts);
+            case (4) -> System.out.println(underSixAttempts);
+            case (5) -> System.out.println(underSixAttempts);
+            case (6) -> System.out.println(underSixAttempts);
+            case (7) -> System.out.println(underNineAttempts);
+            case (8) -> System.out.println(underNineAttempts);
+            case (9) -> System.out.println(underNineAttempts);
+            default -> System.out.println("Угадывать это не твое. Ты угадали числа за: " + player.getCount() + " попыток.");
         }
+        ;
     }
 
     //Вывод не верных попыток через пробел для обоих игроков
