@@ -44,8 +44,15 @@ public class GuessNumber {
         System.out.println("\n" + "Счет в игре: " + playerOne.getName() + " " + playerOne.getScore() + " - "
                 + playerTwo.getName() + " " + playerTwo.getScore() + "\n");
 
-        deleteNumbers(playerOne);
-        deleteNumbers(playerTwo);
+//        deleteNumbers(playerOne);
+//        deleteNumbers(playerTwo);
+        playerOne.deleteNumbers();
+        playerTwo.deleteNumbers();
+    }
+
+    //Обнуление счетчика попыток
+    private void setUpCount(Player player) {
+        player.setCount(0);
     }
 
     // Ввод игроком чисел, их проверка, счетчик счета и попыток для отдельного игрока
@@ -64,26 +71,6 @@ public class GuessNumber {
             System.out.println(compareText);
             return true;
         }
-    }
-
-    //Вывод не верных попыток через пробел для обоих игроков
-    private void printAttemptNumbers() {
-        outputEnteredNumbers(playerOne);
-        outputEnteredNumbers(playerTwo);
-    }
-
-    //Создание копии массива с неверными введенными числами и вывод его через пробел
-    private void outputEnteredNumbers(Player player) {
-        System.out.print("Числа игрока " + player.getName() + ": ");
-        for (int number : player.getEnteredNumbers()) {
-            System.out.print(number + " ");
-        }
-        System.out.println();
-    }
-
-    //Обнуление счетчика попыток
-    private void setUpCount(Player player) {
-        player.setCount(0);
     }
 
     //Сравнение числа с загаданным игрой
@@ -112,8 +99,18 @@ public class GuessNumber {
         }
     }
 
-    // Замена введенных чисел игроками на нули
-    private void deleteNumbers(Player player) {
-        Arrays.fill(player.getEnteredNumbers(), 0, player.getCount(), 0);
+    //Вывод не верных попыток через пробел для обоих игроков
+    private void printAttemptNumbers() {
+        outputEnteredNumbers(playerOne);
+        outputEnteredNumbers(playerTwo);
+    }
+
+    //Создание копии массива с неверными введенными числами и вывод его через пробел
+    private void outputEnteredNumbers(Player player) {
+        System.out.print("Числа игрока " + player.getName() + ": ");
+        for (int number : player.getEnteredNumbers()) {
+            System.out.print(number + " ");
+        }
+        System.out.println();
     }
 }

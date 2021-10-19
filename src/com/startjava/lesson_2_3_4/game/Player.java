@@ -40,4 +40,8 @@ public class Player {
     public void setScore(int score) {
         this.score = score;
     }
+
+    public void deleteNumbers() {
+        Arrays.fill(getEnteredNumbers(), 0, getCount(), 0);
+    }
 }
