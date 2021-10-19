@@ -75,11 +75,11 @@ public class GuessNumber {
 
     //Сравнение числа с загаданным игрой
     private boolean compareNumbers(Player player) {
-        if (player.getEnteredNumbers()[player.getCount() - 1] == targetNumber) {
+        if (player.getLastNumber() == targetNumber) {
             System.out.println("Каким то образом вы угадали число. Красавчик !");
             return true;
         }
-        compareText = player.getEnteredNumbers()[player.getCount() - 1] > targetNumber ?
+        compareText = player.getLastNumber() > targetNumber ?
                 "Ты не угадал.Число больше того, которое загадал Всемогущий" :
                 "Ты не угадал.Число меньше того, которое загадал Всемогущий";
         return false;
