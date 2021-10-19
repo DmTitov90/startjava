@@ -21,7 +21,7 @@ public class Player {
     }
 
     public void setNumber(int number) {
-        this.enteredNumbers[count] = number;
+        enteredNumbers[count] = number;
         count++;
     }
 
