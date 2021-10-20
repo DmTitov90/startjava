@@ -64,7 +64,7 @@ public class GuessNumber {
     //Сравнение числа с загаданным игрой
     private boolean compareNumbers(Player player) {
         if (player.getLastNumber() == targetNumber) {
-            System.out.println("Каким то образом вы угадали число. Красавчик !");
+            System.out.println("Каким то образом ns угадал число. Красавчик !");
             return true;
         }
         String compareText = player.getLastNumber() > targetNumber ? "больше" : "меньше";
@@ -74,21 +74,14 @@ public class GuessNumber {
 
     //Проверка кол-ва попыток
     private void checkLuckLevel(Player player) {
-        String underThreeAttempts = "Срочно иди в казино или на ТВ программу " +
-                "\"Кто хочет стать экстрасенсом?\"!!!Колличество попыток: " + player.getCount() + "  Отлично.";
-        String underSixAttempts = "А ты хорош! Колличество попыток: " + player.getCount();
-        String underNineAttempts = "Нужно тренироваться. Ты угадали числа за: " + player.getCount() + " попыток, не плохо";
         switch (player.getCount()) {
-            case (1) -> System.out.println(underThreeAttempts);
-            case (2) -> System.out.println(underThreeAttempts);
-            case (3) -> System.out.println(underThreeAttempts);
-            case (4) -> System.out.println(underSixAttempts);
-            case (5) -> System.out.println(underSixAttempts);
-            case (6) -> System.out.println(underSixAttempts);
-            case (7) -> System.out.println(underNineAttempts);
-            case (8) -> System.out.println(underNineAttempts);
-            case (9) -> System.out.println(underNineAttempts);
-            default -> System.out.println("Угадывать это не твое. Ты угадали числа за: " + player.getCount() + " попыток.");
+            case 1, 2, 3 -> System.out.println("Срочно иди в казино или на ТВ программу " +
+                    "\"Кто хочет стать экстрасенсом?\"!!!Колличество попыток: " + player.getCount() + "  Отлично.");
+            case 4, 5, 6 -> System.out.println("А ты хорош! Колличество попыток: " + player.getCount());
+            case 7, 8, 9 -> System.out.println("Нужно тренироваться. Ты угадали числа за: "
+                    + player.getCount() + " попыток, не плохо");
+            default -> System.out.println("Угадывать это не твое. Ты угадали числа за: "
+                    + player.getCount() + " попыток.");
         };
     }
 
