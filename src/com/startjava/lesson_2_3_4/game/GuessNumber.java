@@ -25,7 +25,7 @@ public class GuessNumber {
                 break;
             }
         }
-        if (playerTwo.getCount() == 10) {
+        if (playerTwo.getCount() == 9) {
             System.out.println("Никто не угадал загаданное число, испытайте удачу в следующей игре!");
             printAttemptNumbers();
         }
