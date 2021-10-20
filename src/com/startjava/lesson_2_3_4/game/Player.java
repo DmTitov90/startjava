@@ -29,10 +29,6 @@ public class Player {
         return count;
     }
 
-    public void setCount(int count) {
-        this.count = count;
-    }
-
     public int getScore() {
         return score;
     }
@@ -41,8 +37,9 @@ public class Player {
         this.score = score;
     }
 
-    public void deleteNumbers() {
+    public void clearNumbers() {
         Arrays.fill(enteredNumbers, 0, getCount(), 0);
+        count = 0;
     }
 
     public int getLastNumber() {
