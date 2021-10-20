@@ -20,20 +20,13 @@ public class GuessNumber {
         targetNumber = (int) (Math.random() * 100 + 1);
         System.out.println("\n" + "Привет! Попробуйте угадать число, которое было загадано программой");
         // Цикл игры, в котором игроки вводят числа и идет их проверка
-        int countAttempt = 0;
-        while (countAttempt < 10) {
-            countAttempt++;
-            if (makeMove(playerOne)) {
-                break;
-            }
-            if (makeMove(playerTwo)) {
+        while (playerTwo.getCount() < 10) {
+            if (makeMove(playerOne) || makeMove(playerTwo)) {
                 break;
             }
         }
         if (playerTwo.getCount() == 10) {
             System.out.println("Никто не угадал загаданное число, испытайте удачу в следующей игре!");
-            printAttemptNumbers();
-        } else {
             printAttemptNumbers();
         }
 
@@ -56,6 +49,7 @@ public class GuessNumber {
             player.setScore(player.getScore() + 1);
             checkLuckLevel(player);
             System.out.println(player.getName() + " " + "Победитель !!!");
+            printAttemptNumbers();
             return true;
         }
         return false;

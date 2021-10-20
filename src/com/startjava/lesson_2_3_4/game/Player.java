@@ -38,11 +38,11 @@ public class Player {
     }
 
     public void clearNumbers() {
-        Arrays.fill(enteredNumbers, 0, getCount(), 0);
+        Arrays.fill(enteredNumbers, 0, count, 0);
         count = 0;
     }
 
     public int getLastNumber() {
-        return getEnteredNumbers()[count - 1];
+        return enteredNumbers[count - 1];
     }
 }
