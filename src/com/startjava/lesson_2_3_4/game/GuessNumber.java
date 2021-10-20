@@ -27,8 +27,8 @@ public class GuessNumber {
         }
         if (playerTwo.getCount() == 9) {
             System.out.println("Никто не угадал загаданное число, испытайте удачу в следующей игре!");
-            printAttemptNumbers();
         }
+        printAttemptNumbers();
 
         // Объявление счета в игре
         System.out.println("\n" + "Счет в игре: " + playerOne.getName() + " " + playerOne.getScore() + " - "
@@ -46,10 +46,9 @@ public class GuessNumber {
             System.out.println("У " + player.getName() + " Закончились попытки");
             return false;
         } else if (compareNumbers(player)) {
-            player.setScore(player.getScore() + 1);
+            player.setScore();
             checkLuckLevel(player);
             System.out.println(player.getName() + " " + "Победитель !!!");
-            printAttemptNumbers();
             return true;
         }
         return false;

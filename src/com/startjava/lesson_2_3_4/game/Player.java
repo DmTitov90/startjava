@@ -33,8 +33,8 @@ public class Player {
         return score;
     }
 
-    public void setScore(int score) {
-        this.score = score;
+    public void setScore() {
+        score++;
     }
 
     public void clearNumbers() {

@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 /**
  * Creator Dmitrii Titov
- * Date 20.10.2021 Version 1.0.6
+ * Date 20.10.2021 Version 1.0.7
  */
 public class GuessNumberTest {
     public static void main(String[] args) throws IOException {
